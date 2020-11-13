@@ -22,6 +22,7 @@ class App extends Component {
         })
       })
   }
+  //This function is posting data to an api endpoint 
   async postData() {
 
     try {
@@ -34,7 +35,11 @@ class App extends Component {
           'Content-type': 'application/json',
         },
         body: JSON.stringify({
-          key1: 'myusername'
+          key1: 'myusername',
+          key2: 'password',
+          name: 'John',
+          lastName: 'Doe',
+          age: 34
         })
 
       })
