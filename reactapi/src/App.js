@@ -62,11 +62,10 @@ class App extends Component {
             {items.map(item => (
               <li key={item.id}>
                 Name: {item.name} | Email: {item.email} | Username: {item.username}
-                <div><button onClick={() => this.postData()}> Press me to post some data</button></div>
-
               </li>
             ))}
           </ul>
+          <div><button onClick={() => this.postData()}> Press me to post some data</button></div>
         </div>
       )
     }
