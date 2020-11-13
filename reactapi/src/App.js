@@ -38,7 +38,7 @@ class App extends Component {
         })
 
       })
-      console.log('Result: ' + result);
+      console.log(result);
 
     } catch (e) {
       console.log(e)
