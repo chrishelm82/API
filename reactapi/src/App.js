@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import family from './family.jpg'
 
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
 
   async componentDidMount() {
 
+    // This fetch methods GETS data from the API endpoint
     await fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
       .then(json => {
@@ -22,7 +24,7 @@ class App extends Component {
         })
       })
   }
-  //This function is posting data to an api endpoint 
+  //This function is using fetch to post the body data to an api endpoint 
   async postData() {
 
     try {
@@ -50,6 +52,7 @@ class App extends Component {
     }
 
   }
+
   render() {
 
     const { isLoaded, items } = this.state
@@ -59,10 +62,9 @@ class App extends Component {
     }
 
     else {
-
+      //This renders data from the fetch URL API and also renders the components/images
       return (
         <div className='App'>
-
           <ul>
             {items.map(item => (
               <li key={item.id}>
@@ -70,6 +72,9 @@ class App extends Component {
               </li>
             ))}
           </ul>
+          <div>
+            <img src={family} alt="Family" height={300} width={400} />
+          </div>
           <div><button onClick={() => this.postData()}> Press me to post some data</button></div>
         </div>
       )
